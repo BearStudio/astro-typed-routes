@@ -15,6 +15,7 @@ export default function typedRoutes(): AstroIntegration {
           }
         };
 
+        server.watcher.on("ready", () => generateRoutes({ logger, server }));
         server.watcher.on("add", listener);
         server.watcher.on("unlink", listener);
       },
