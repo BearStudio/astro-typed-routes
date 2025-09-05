@@ -1,0 +1,42 @@
+{
+  "name": "@bearstudio/astro-typed-routes",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Astro integration to build a typed routes object",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "tsup src/index.ts --format esm --dts --watch",
+    "build": "tsup src/index.ts --format esm --dts --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "astro",
+    "typescript",
+    "routing",
+    "astro-integration"
+  ],
+  "devDependencies": {
+    "astro": "5.13.5",
+    "@repo/typescript-config": "workspace:*",
+    "remeda": "2.30.0",
+    "tsup": "8.4.0",
+    "typescript": "latest",
+    "vite": "6"
+  },
+  "author": {
+    "email": "yoann@bearstudio.fr",
+    "name": "Yoann Fleury",
+    "url": "https://www.yoannfleury.dev"
+  }
+}
