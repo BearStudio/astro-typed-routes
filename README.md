@@ -50,4 +50,9 @@ import { ROUTES } from "../routes.gen";
 <a href={lunalink(ROUTES.about.__path, {})}>
   About
 </a>
+
+<a href={lunalink(ROUTES.projects[':id].__path, { id: '1'})}>
+ Project 1
+</a>
+
 ```
