@@ -3,9 +3,19 @@ import type { ViteDevServer } from "vite";
 import fs from "node:fs";
 import path from "node:path";
 
+const matchCatchAll = /\[\.\.\..*\]/;
+const matchDynamic = /\[.*\]/;
+
 const getKey = (itemName: string) => {
+  // Handle [...name] => :name*
+  if (matchCatchAll.test(itemName)) {
+    const inner = itemName.slice(1, -1).replaceAll(".", "");
+
+    return `:${inner}`;
+  }
+
   // Handle  [name] => :name, [__image].[__type] => :__image.:__type
-  if (/\[.*\]/.test(itemName)) {
+  if (matchDynamic.test(itemName)) {
     return itemName
       .split(".")
       .map((part) =>
@@ -15,6 +25,7 @@ const getKey = (itemName: string) => {
       )
       .join(".");
   }
+
   return itemName;
 };
 
