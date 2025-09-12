@@ -1,16 +1,24 @@
 ---
-
+import { ROUTES } from "../routes.gen";
+import { lunalink } from "@bearstudio/lunalink";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Astro</h1>
+    <a
+      href={lunalink(ROUTES.posts[":page"].__path, {
+        page: "1",
+      })}
+    >
+      Post 1
+    </a>
+  </body>
 </html>
