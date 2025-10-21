@@ -24,7 +24,8 @@
     "astro",
     "typescript",
     "routing",
-    "astro-integration"
+    "astro-integration",
+    "withastro"
   ],
   "devDependencies": {
     "astro": "5.13.5",
