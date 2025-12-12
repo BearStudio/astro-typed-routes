@@ -21,7 +21,7 @@ const getKey = (itemName: string) => {
       .map((part) =>
         part.startsWith("[") && part.endsWith("]")
           ? `:${part.slice(1, -1)}`
-          : part
+          : part,
       )
       .join(".");
   }
@@ -44,6 +44,9 @@ export const generateRoutes = ({
       const items = fs.readdirSync(dirPath, { withFileTypes: true });
 
       items.forEach((item) => {
+        // Skip files and directories prefixed with underscore (excluded from routing)
+        if (item.name.startsWith("_")) return;
+
         if (item.isDirectory()) {
           // (name) => Ignore the level in the object
           if (item.name.match(/^\(.*\)$/)) {
@@ -51,7 +54,7 @@ export const generateRoutes = ({
             Object.assign(result, subResult);
           } else {
             result[getKey(item.name)] = readDirectory(
-              `${dirPath}/${item.name}`
+              `${dirPath}/${item.name}`,
             );
           }
         } else if (item.isFile()) {

@@ -9,8 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "5.13.5",
     "@bearstudio/astro-typed-routes": "workspace:*",
-    "@bearstudio/lunalink": "0.3.1"
+    "@bearstudio/lunalink": "0.3.1",
+    "astro": "5.16.5"
   }
 }
