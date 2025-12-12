@@ -1,5 +1,11 @@
 # @bearstudio/astro-typed-routes
 
+## 0.1.5
+
+### Patch Changes
+
+- bcfeb8a: docs: link README for npm
+
 ## 0.1.4
 
 ### Patch Changes
