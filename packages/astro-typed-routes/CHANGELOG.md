@@ -1,5 +1,11 @@
 # @bearstudio/astro-typed-routes
 
+## 0.1.4
+
+### Patch Changes
+
+- 37631c5: fix: ignore route prefixed with \_
+
 ## 0.1.3
 
 ### Patch Changes
