@@ -46,6 +46,8 @@ export const generateRoutes = ({
       items.forEach((item) => {
         // Skip files and directories prefixed with underscore (excluded from routing)
         if (item.name.startsWith("_")) return;
+        // Skip hidden files and directories (including .DS_Store)
+        if (item.name.startsWith(".")) return;
 
         if (item.isDirectory()) {
           // (name) => Ignore the level in the object
