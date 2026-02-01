@@ -1,5 +1,11 @@
 # @bearstudio/astro-typed-routes
 
+## 0.1.6
+
+### Patch Changes
+
+- dddcfb1: fix: avoid .DS_Store and all hidden files to generate paths
+
 ## 0.1.5
 
 ### Patch Changes

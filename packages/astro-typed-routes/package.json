@@ -1,6 +1,6 @@
 {
   "name": "@bearstudio/astro-typed-routes",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "license": "MIT",
   "description": "Astro integration to build a typed routes object",
   "type": "module",
